@@ -65,6 +65,14 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/crear-sala']);
   }
 
+  crearPelicula() {
+    this.router.navigate(['/crear-pelicula']);
+  }
+
+  crearProyeccion() {
+    this.router.navigate(['/crear-proyeccion']);
+  }
+
   crearEvento() {
      this.router.navigate(['/crear-marcador']);
   }
