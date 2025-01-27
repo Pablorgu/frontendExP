@@ -1,6 +1,6 @@
-export interface Marcador {
+export interface Sala {
     lat: number;
     lon: number;
     email: string;
-    imagen: string;
+    nombre: string;
   }  

@@ -3,14 +3,14 @@ import { HttpClient, HttpHeaders } from "@angular/common/http"
 import { environment } from "../../environments/environment";
 import * as L from "leaflet"
 import { catchError, Observable, throwError } from "rxjs"
-import { Marcador } from "../models/marcador.model";
+import { Sala } from "../models/sala.model";
 import { UserService } from "./user.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MapasService {
-  private apiUrl = environment.BACKEND_URL + '/marcadores/';
+  private apiUrl = environment.BACKEND_URL + '/salas/';
   private map:any
 
   constructor(private http: HttpClient,
@@ -58,8 +58,8 @@ export class MapasService {
 
 
 //extras
-  getMarkersbyEmail(email: string): Observable<any> {
-    return this.http.get<Marcador[]>(this.apiUrl + "todos?email=" + email).pipe(
+  getSalasbyEmail(email: string): Observable<any> {
+    return this.http.get<Sala[]>(this.apiUrl + "todos?email=" + email).pipe(
       catchError((error) => {
         console.error("Error al obtener los marcadores", error)
         return throwError(() => error)
@@ -67,7 +67,7 @@ export class MapasService {
     )
   }
 
-  postMarker(marker: Marcador): Observable<any> {
+  postSala(marker: Sala): Observable<any> {
     const headers = {
       Authorization: `Bearer ${this.userService.getUser()?.oauth.access_token}`,
     }

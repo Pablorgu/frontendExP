@@ -5,7 +5,7 @@ import { ProfileComponent } from './modules/profile/profile.component';
 import { LogComponent } from './modules/log/log.component';
 import { AuthGuard } from './guards/auth.guards';
 import { BridgeComponent } from './modules/bridge/bridge.component';
-import { CrearMarcadorComponent } from './modules/crear-marcador/crear-marcador.component';
+import { CrearSalaComponent } from './modules/crear-sala/crear-sala.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -14,5 +14,5 @@ export const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent},
   { path: 'log', component: LogComponent, canActivate: [AuthGuard] },
   { path: 'bridge', component: BridgeComponent},
-  { path: 'crear-marcador', component: CrearMarcadorComponent}
+  { path: 'crear-sala', component: CrearSalaComponent},
 ];

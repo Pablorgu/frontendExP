@@ -21,6 +21,7 @@ export class BridgeComponent {
       if (this.profile != null) {
         console.log("Profile: ", this.profile())
         console.log("auth: ", this.authService.getRawProfile())
+        console.log("autenticacion:", this.authService.getToken())
         const {given_name, email, sub } = this.profile()
         const user: User = {
           id: sub,

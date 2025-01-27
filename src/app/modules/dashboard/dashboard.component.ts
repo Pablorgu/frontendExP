@@ -5,7 +5,7 @@ import { AuthGoogleService } from '../../services/auth-google.service';
 import { UserService } from '../../services/user.service';
 import { MapasComponent } from "../mapas/mapas.component";
 import { MapasService } from '../../services/mapas.service';
-import { Marcador } from '../../models/marcador.model';
+import { Sala } from '../../models/sala.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,7 +16,7 @@ import { Marcador } from '../../models/marcador.model';
 export class DashboardComponent implements OnInit {
   profile: any;
   user: any;
-  markers: Marcador[] = [];
+  markers: Sala[] = [];
   // token: string;
 
   constructor(
@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.userService.getUser());
-    this.mapService.getMarkersbyEmail(this.user.email).subscribe((markers: any) => {
+    this.mapService.getSalasbyEmail(this.user.email).subscribe((markers: any) => {
       this.markers = markers.marcadores;
       console.log(this.markers);
         for (let marker of this.markers) {
@@ -59,6 +59,10 @@ export class DashboardComponent implements OnInit {
 
   toProfile() {
     this.router.navigate(['/profile']);
+  }
+
+  crearSala() {
+    this.router.navigate(['/crear-sala']);
   }
 
   crearEvento() {
