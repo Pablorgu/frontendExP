@@ -1,14 +1,18 @@
-<div class="dashboard items-center content-center flex flex-col flex-nowrap justify-center p-[16px]">
-  <h1 >Mapa de {{ user.name }}</h1>
+<div class="dashboard items-center content-center flex flex-col flex-nowrap justify-center p-[16px] relative">
+  <h1>Mapa de {{ user.name }}</h1>
 
-  
-  <div class="w-full h-64">
+  <!-- Contenedor del mapa ajustado -->
+  <div class="w-full h-64 mb-[100px]">
     <app-mapas [mostrarBusqueda]="false" class="w-full h-full"></app-mapas>
   </div>
-  <button class="fixed bottom-4 rounded bg-blue-500 px-6 py-2 font-bold text-white shadow-lg hover:bg-blue-700" (click)="logOut()">LogOut</button>
-  <button class="fixed right-4 top-4 rounded bg-blue-500 px-6 py-2 font-bold text-white shadow-lg hover:bg-blue-700" (click)="toProfile()">Profile</button>
-  <button class="fixed left-4 bottom-4 rounded bg-blue-500 px-6 py-2 font-bold text-white shadow-lg hover:bg-blue-700" (click)="toLog()">Ver log</button>
-  <button class="fixed right-4 bottom-4 rounded bg-blue-500 px-6 py-2 font-bold text-white shadow-lg hover:bg-blue-700" (click)="crearSala()">Crear Sala</button>
-  <button class="fixed right-4 bottom-4 rounded bg-blue-500 px-6 py-2 font-bold text-white shadow-lg hover:bg-blue-700" (click)="crearProyeccion()">Asignar Proyeccion</button>
-  <button class="fixed left-4 top-4 rounded bg-blue-500 px-6 py-2 font-bold text-white shadow-lg hover:bg-blue-700" (click)="crearPelicula()">Crear Pelicula</button>
+
+  <!-- Contenedor de los botones -->
+  <div>
+    <button class="fixed right-4 bottom-24 rounded bg-blue-500 px-6 py-2 font-bold text-white shadow-lg hover:bg-blue-700" (click)="crearSala()">Crear Sala</button>
+    <a href="https://frontend-ex-p.vercel.app/crear-sala" target="_blank">En caso de que no aparezca el boton crear sala</a>
+    <button class="fixed bottom-4 left-4 rounded bg-blue-500 px-6 py-2 font-bold text-white shadow-lg hover:bg-blue-700" (click)="logOut()">LogOut</button>
+    <button class="fixed right-4 top-4 rounded bg-blue-500 px-6 py-2 font-bold text-white shadow-lg hover:bg-blue-700" (click)="toProfile()">Profile</button>
+    <button class="fixed right-4 bottom-14 rounded bg-blue-500 px-6 py-2 font-bold text-white shadow-lg hover:bg-blue-700" (click)="crearProyeccion()">Asignar Proyeccion</button>
+    <button class="fixed left-4 top-4 rounded bg-blue-500 px-6 py-2 font-bold text-white shadow-lg hover:bg-blue-700" (click)="crearPelicula()">Crear Pelicula</button>
+  </div>
 </div>

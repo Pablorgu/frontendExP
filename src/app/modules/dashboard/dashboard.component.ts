@@ -73,11 +73,4 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/crear-proyeccion']);
   }
 
-  crearEvento() {
-     this.router.navigate(['/crear-marcador']);
-  }
-
-  toLog() {
-    this.router.navigate(['/log']);
-  }
 }
