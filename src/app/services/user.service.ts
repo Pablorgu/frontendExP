@@ -70,6 +70,9 @@ export class UserService {
       access_token: user.oauth.access_token,
       expires_in: user.oauth.expires_in,
     }
-    return this.http.post(this.apiUrl + "crear", userData)
+    const headers = {
+      Authorization: `Bearer ${user.oauth.access_token}`,
+    }
+    return this.http.post(this.apiUrl + "crear", userData, {headers})
   }
 }
